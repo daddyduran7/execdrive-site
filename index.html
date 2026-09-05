@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070707" />
+  <meta name="description" content="ExecDrive luxury chauffeur service in Denver, Colorado. Airport transfers, executive travel, scheduled rides and private transportation for up to 7 passengers." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <title>ExecDrive | Luxury Chauffeur Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Italiana&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="ExecDrive home">
+      <span class="monogram">EC</span>
+      <span class="brand-copy"><b>EXECDRIVE</b><small>LUXURY CHAUFFEUR SERVICE</small></span>
+    </a>
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+    <nav id="nav">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#vehicle">Our Vehicle</a><a href="#about">About</a><a href="#book">Book a Ride</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="outline-btn desktop-call" href="tel:+17204252202">☎ Call Now</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-logo"><span>EC</span><strong>EXECDRIVE</strong></div>
+          <p class="eyebrow">LUXURY CHAUFFEUR SERVICE</p>
+          <h1>Your Destination Is Our Priority</h1>
+          <p class="values">COMFORT <i>•</i> SAFETY <i>•</i> RELIABILITY <i>•</i> DISCRETION</p>
+          <div class="actions">
+            <a class="gold-btn" href="tel:+17204252202">☎ Call George<br><b>720-425-2202</b></a>
+            <a class="outline-btn" href="#book">▣ Schedule a Ride</a>
+          </div>
+        </div>
+        <div class="vehicle-stage" aria-label="Black Infiniti luxury SUV">
+          <div class="airport-glow"></div>
+          <img src="assets/infiniti.png" alt="Black Infiniti seven-passenger SUV used by ExecDrive" />
+          <div class="driver-signature">George<small>PROFESSIONAL • RELIABLE • TRUSTED</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service-strip" id="services">
+      <article><span>✈</span><b>Airport Transfers</b></article>
+      <article><span>▣</span><b>Scheduled Rides</b></article>
+      <article><span>▣</span><b>Business & Executive Travel</b></article>
+      <article><span>👥</span><b>Group Travel<br>(Up to 7 Passengers)</b></article>
+      <article><span>●</span><b>Personal Transportation</b></article>
+    </section>
+
+    <section class="luxury-section" id="vehicle">
+      <div class="cash-image"><img src="assets/cash-register.png" alt="Denver Cash Register Building at night" /></div>
+      <div class="luxury-copy">
+        <p class="eyebrow gold">TRAVEL IN A HIGHER CLASS</p>
+        <h2>Luxury. Space. Peace of Mind.</h2>
+        <p>Whether you're traveling for business, heading to the airport, attending a special event, or need a reliable ride around town, ExecDrive provides a first-class experience tailored to your needs. Our seven-passenger Infiniti gives you room to travel together in comfort and style.</p>
+        <div class="benefits">
+          <span>◇ <b>Premium Vehicle</b></span><span>⬡ <b>Safe & Reliable</b></span><span>👥 <b>Up to 7 Passengers</b></span><span>★ <b>Professional Service</b></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-grid" id="about">
+      <article class="tile airport"><div><b>Airport Transfers</b><small>On time, every time.</small></div></article>
+      <article class="tile business"><div><b>Business Travel</b><small>Arrive ready.</small></div></article>
+      <article class="tile event"><div><b>Special Events</b><small>Make it a memorable arrival.</small></div></article>
+      <article class="tile personal"><div><b>Personal Rides</b><small>Wherever life takes you.</small></div></article>
+    </section>
+
+    <section class="booking" id="book">
+      <div class="form-card">
+        <p class="eyebrow gold">REQUEST A RIDE</p>
+        <h2>Get a Quote or Schedule Your Trip</h2>
+        <form id="rideForm">
+          <div class="two"><label>Full Name<input id="name" required autocomplete="name" /></label><label>Phone Number<input id="phone" required inputmode="tel" autocomplete="tel" /></label></div>
+          <div class="two"><label>Pickup Location<input id="pickup" required /></label><label>Drop-off Location<input id="dropoff" required /></label></div>
+          <div class="three"><label>Date<input id="date" type="date" required /></label><label>Time<input id="time" type="time" required /></label><label>Passengers<select id="passengers" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></label></div>
+          <label>Additional Details<textarea id="details" rows="4" placeholder="Flight number, luggage, child seat request, special instructions, etc."></textarea></label>
+          <div class="form-actions"><button class="gold-btn" type="submit">➤ Send Ride Request</button><button class="outline-btn" type="button" id="copyBtn">Copy Request</button></div>
+          <p class="form-note" id="formNote">On a phone, your request opens as a prefilled text message to George. No account is required.</p>
+        </form>
+      </div>
+      <aside class="contact-card" id="contact">
+        <p class="eyebrow gold">GET IN TOUCH</p>
+        <h2>I'm Here to Help</h2>
+        <a href="https://execdrive.biz">◎ www.execdrive.biz</a>
+        <a href="tel:+17204252202">☎ 720-425-2202</a>
+        <a href="mailto:george@execdrive.biz">✉ george@execdrive.biz</a>
+        <p>⌖ Denver, CO<br><small>Serving Denver and the Front Range</small></p>
+        <div class="more-than">More Than<br>A Ride…<small>IT'S A BETTER WAY TO TRAVEL</small></div>
+      </aside>
+    </section>
+  </main>
+
+  <div class="mobile-dock">
+    <a href="tel:+17204252202">☎ Call</a><a href="#book">▣ Request Ride</a><button id="installBtn" hidden>＋ Install App</button>
+  </div>
+
+  <footer>
+    <a class="brand" href="#home"><span class="monogram">EC</span><span class="brand-copy"><b>EXECDRIVE</b><small>LUXURY CHAUFFEUR SERVICE</small></span></a>
+    <p>© 2026 ExecDrive. All rights reserved.</p>
+    <p class="gold">TRAVEL IN A HIGHER CLASS</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
