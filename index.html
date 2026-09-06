@@ -1,113 +1,111 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#070707" />
-  <meta name="description" content="ExecDrive luxury chauffeur service in Denver, Colorado. Airport transfers, executive travel, scheduled rides and private transportation for up to 7 passengers." />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
   <title>ExecDrive | Luxury Chauffeur Service</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Italiana&family=Parisienne&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="ExecDrive luxury chauffeur service for Denver and the Front Range. Airport transfers, executive travel, scheduled rides, personal transportation and group travel up to 7 passengers.">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#050505;color:#fff;font-family:Arial,sans-serif}
+    body{min-height:100vh}
+    .site{position:relative;width:min(100%,1024px);margin:0 auto;background:#000}
+    .art{display:block;width:100%;height:auto}
+    .hotspot{position:absolute;display:block;z-index:5;background:transparent;border:0;text-decoration:none;cursor:pointer}
+    .call-top{left:84.2%;top:.8%;width:12%;height:2.4%}
+    .call-main{left:3.7%;top:25.1%;width:21.8%;height:3.7%}
+    .schedule{left:27.5%;top:25.1%;width:19.3%;height:3.7%}
+    .submit{left:15.2%;top:87.2%;width:26.9%;height:3.1%}
+    .footer-book{left:51.9%;top:94.1%;width:9.3%;height:2.4%}
+    .modal{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:18px}
+    .modal.open{display:flex}
+    .card{width:min(560px,100%);max-height:92vh;overflow:auto;background:#0b0b0b;border:1px solid #b9913f;border-radius:18px;padding:22px;box-shadow:0 20px 60px #000}
+    .card h2{margin:0 0 6px;color:#d4af5b;font-family:Georgia,serif;letter-spacing:.05em}
+    .card p{margin:0 0 18px;color:#ddd}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,select,textarea{width:100%;background:#151515;color:#fff;border:1px solid #777;border-radius:7px;padding:12px;font-size:16px}
+    textarea{min-height:100px;resize:vertical}
+    .wide{grid-column:1/-1}
+    .actions{display:flex;gap:10px;margin-top:14px}
+    button{border:0;border-radius:8px;padding:13px 16px;font-weight:700;cursor:pointer}
+    .gold{background:linear-gradient(90deg,#c89b3c,#f0cb75);color:#111;flex:1}
+    .dark{background:#222;color:#fff;border:1px solid #777}
+    .note{font-size:13px;color:#aaa;margin-top:12px}
+    @media(max-width:620px){
+      .grid{grid-template-columns:1fr}
+      .wide{grid-column:auto}
+      .card{padding:18px}
+    }
+  </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="ExecDrive home">
-      <span class="monogram">EC</span>
-      <span class="brand-copy"><b>EXECDRIVE</b><small>LUXURY CHAUFFEUR SERVICE</small></span>
-    </a>
-    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
-    <nav id="nav">
-      <a href="#home">Home</a><a href="#services">Services</a><a href="#vehicle">Our Vehicle</a><a href="#about">About</a><a href="#book">Book a Ride</a><a href="#contact">Contact</a>
-    </nav>
-    <a class="outline-btn desktop-call" href="tel:+17204252202">☎ Call Now</a>
-  </header>
+  <main class="site" aria-label="ExecDrive luxury chauffeur service">
+    <img class="art" src="execdrive-approved.png" alt="ExecDrive luxury chauffeur service website featuring the EC car silhouette logo, black Infiniti SUV, airport and airplane imagery, Denver skyline and mountains, services, ride request form and contact information.">
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="hero-logo"><span>EC</span><strong>EXECDRIVE</strong></div>
-          <p class="eyebrow">LUXURY CHAUFFEUR SERVICE</p>
-          <h1>Your Destination Is Our Priority</h1>
-          <p class="values">COMFORT <i>•</i> SAFETY <i>•</i> RELIABILITY <i>•</i> DISCRETION</p>
-          <div class="actions">
-            <a class="gold-btn" href="tel:+17204252202">☎ Call George<br><b>720-425-2202</b></a>
-            <a class="outline-btn" href="#book">▣ Schedule a Ride</a>
-          </div>
-        </div>
-        <div class="vehicle-stage" aria-label="Black Infiniti luxury SUV">
-          <div class="airport-glow"></div>
-          <img src="infiniti.png" alt="Black Infiniti seven-passenger SUV used by ExecDrive" />
-          <div class="driver-signature">George<small>PROFESSIONAL • RELIABLE • TRUSTED</small></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="service-strip" id="services">
-      <article><span>✈</span><b>Airport Transfers</b></article>
-      <article><span>▣</span><b>Scheduled Rides</b></article>
-      <article><span>▣</span><b>Business & Executive Travel</b></article>
-      <article><span>👥</span><b>Group Travel<br>(Up to 7 Passengers)</b></article>
-      <article><span>●</span><b>Personal Transportation</b></article>
-    </section>
-
-    <section class="luxury-section" id="vehicle">
-      <div class="cash-image"><img src="cash-register.png" alt="Denver Cash Register Building at night" /></div>
-      <div class="luxury-copy">
-        <p class="eyebrow gold">TRAVEL IN A HIGHER CLASS</p>
-        <h2>Luxury. Space. Peace of Mind.</h2>
-        <p>Whether you're traveling for business, heading to the airport, attending a special event, or need a reliable ride around town, ExecDrive provides a first-class experience tailored to your needs. Our seven-passenger Infiniti gives you room to travel together in comfort and style.</p>
-        <div class="benefits">
-          <span>◇ <b>Premium Vehicle</b></span><span>⬡ <b>Safe & Reliable</b></span><span>👥 <b>Up to 7 Passengers</b></span><span>★ <b>Professional Service</b></span>
-        </div>
-      </div>
-    </section>
-
-    <section class="feature-grid" id="about">
-      <article class="tile airport"><div><b>Airport Transfers</b><small>On time, every time.</small></div></article>
-      <article class="tile business"><div><b>Business Travel</b><small>Arrive ready.</small></div></article>
-      <article class="tile event"><div><b>Special Events</b><small>Make it a memorable arrival.</small></div></article>
-      <article class="tile personal"><div><b>Personal Rides</b><small>Wherever life takes you.</small></div></article>
-    </section>
-
-    <section class="booking" id="book">
-      <div class="form-card">
-        <p class="eyebrow gold">REQUEST A RIDE</p>
-        <h2>Get a Quote or Schedule Your Trip</h2>
-        <form id="rideForm">
-          <div class="two"><label>Full Name<input id="name" required autocomplete="name" /></label><label>Phone Number<input id="phone" required inputmode="tel" autocomplete="tel" /></label></div>
-          <div class="two"><label>Pickup Location<input id="pickup" required /></label><label>Drop-off Location<input id="dropoff" required /></label></div>
-          <div class="three"><label>Date<input id="date" type="date" required /></label><label>Time<input id="time" type="time" required /></label><label>Passengers<select id="passengers" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></label></div>
-          <label>Additional Details<textarea id="details" rows="4" placeholder="Flight number, luggage, child seat request, special instructions, etc."></textarea></label>
-          <div class="form-actions"><button class="gold-btn" type="submit">➤ Send Ride Request</button><button class="outline-btn" type="button" id="copyBtn">Copy Request</button></div>
-          <p class="form-note" id="formNote">On a phone, your request opens as a prefilled text message to George. No account is required.</p>
-        </form>
-      </div>
-      <aside class="contact-card" id="contact">
-        <p class="eyebrow gold">GET IN TOUCH</p>
-        <h2>I'm Here to Help</h2>
-        <a href="https://execdrive.biz">◎ www.execdrive.biz</a>
-        <a href="tel:+17204252202">☎ 720-425-2202</a>
-        <a href="mailto:george@execdrive.biz">✉ george@execdrive.biz</a>
-        <p>⌖ Denver, CO<br><small>Serving Denver and the Front Range</small></p>
-        <div class="more-than">More Than<br>A Ride…<small>IT'S A BETTER WAY TO TRAVEL</small></div>
-      </aside>
-    </section>
+    <a class="hotspot call-top" href="tel:+17204252202" aria-label="Call ExecDrive"></a>
+    <a class="hotspot call-main" href="tel:+17204252202" aria-label="Call or text ExecDrive at 720-425-2202"></a>
+    <button class="hotspot schedule" type="button" aria-label="Schedule a ride" onclick="openRide()"></button>
+    <button class="hotspot submit" type="button" aria-label="Submit ride request" onclick="openRide()"></button>
+    <button class="hotspot footer-book" type="button" aria-label="Book a ride" onclick="openRide()"></button>
   </main>
 
-  <div class="mobile-dock">
-    <a href="tel:+17204252202">☎ Call</a><a href="#book">▣ Request Ride</a><button id="installBtn" hidden>＋ Install App</button>
+  <div class="modal" id="rideModal" role="dialog" aria-modal="true" aria-labelledby="rideTitle">
+    <form class="card" id="rideForm">
+      <h2 id="rideTitle">Request a Ride</h2>
+      <p>Send your trip details directly to ExecDrive.</p>
+      <div class="grid">
+        <input id="name" required placeholder="Full Name" autocomplete="name">
+        <input id="phone" required placeholder="Phone Number" inputmode="tel" autocomplete="tel">
+        <input id="pickup" required placeholder="Pickup Location">
+        <input id="dropoff" required placeholder="Drop-off Location">
+        <input id="date" required type="date">
+        <input id="time" required type="time">
+        <select id="passengers" required>
+          <option value="">Number of Passengers</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+          <option>5</option><option>6</option><option>7</option>
+        </select>
+        <textarea class="wide" id="details" placeholder="Additional Details (Optional)"></textarea>
+      </div>
+      <div class="actions">
+        <button type="button" class="dark" onclick="closeRide()">Cancel</button>
+        <button type="submit" class="gold">Send Request</button>
+      </div>
+      <div class="note">This opens your text-message app with the ride request addressed to 720-425-2202.</div>
+    </form>
   </div>
 
-  <footer>
-    <a class="brand" href="#home"><span class="monogram">EC</span><span class="brand-copy"><b>EXECDRIVE</b><small>LUXURY CHAUFFEUR SERVICE</small></span></a>
-    <p>© 2026 ExecDrive. All rights reserved.</p>
-    <p class="gold">TRAVEL IN A HIGHER CLASS</p>
-  </footer>
-  <script src="app.js"></script>
+  <script>
+    const modal=document.getElementById('rideModal');
+    function openRide(){modal.classList.add('open');document.body.style.overflow='hidden'}
+    function closeRide(){modal.classList.remove('open');document.body.style.overflow=''}
+    modal.addEventListener('click',e=>{if(e.target===modal)closeRide()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRide()});
+    document.getElementById('rideForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const g=id=>document.getElementById(id).value.trim();
+      const msg=[
+        'ExecDrive Ride Request',
+        'Name: '+g('name'),
+        'Phone: '+g('phone'),
+        'Pickup: '+g('pickup'),
+        'Drop-off: '+g('dropoff'),
+        'Date: '+g('date'),
+        'Time: '+g('time'),
+        'Passengers: '+g('passengers'),
+        'Details: '+(g('details')||'None')
+      ].join('\n');
+      location.href='sms:+17204252202?&body='+encodeURIComponent(msg);
+    });
+
+    // Clear the previous test site's service-worker cache so this replacement appears immediately.
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister()));
+    }
+    if('caches' in window){
+      caches.keys().then(keys=>keys.forEach(k=>caches.delete(k)));
+    }
+  </script>
 </body>
 </html>
