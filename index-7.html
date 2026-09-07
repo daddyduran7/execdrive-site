@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <title>ExecDrive | Luxury Chauffeur Service</title>
+  <meta name="description" content="ExecDrive luxury chauffeur service for Denver and the Front Range. Airport transfers, executive travel, scheduled rides, personal transportation and group travel up to 7 passengers.">
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    html,body{margin:0;background:#050505;color:#fff;font-family:Arial,sans-serif}
+    body{min-height:100vh}
+    .site{position:relative;width:min(100%,1024px);margin:0 auto;background:#000}
+    .art{display:block;width:100%;height:auto}
+
+    /* Invisible clickable areas positioned over the approved artwork. */
+    .hotspot{position:absolute;display:block;z-index:8;background:transparent;border:0;text-decoration:none;cursor:pointer;padding:0}
+
+    /* Top navigation */
+    .nav-home{left:29.8%;top:.55%;width:5.3%;height:2.6%}
+    .nav-services{left:36.3%;top:.55%;width:5.7%;height:2.6%}
+    .nav-vehicle{left:43.7%;top:.55%;width:7.3%;height:2.6%}
+    .nav-about{left:52.4%;top:.55%;width:5.5%;height:2.6%}
+    .nav-book{left:58.7%;top:.55%;width:7.5%;height:2.6%}
+    .nav-contact{left:66.9%;top:.55%;width:6.8%;height:2.6%}
+
+    /* Existing action buttons */
+    .call-top{left:84.2%;top:.8%;width:12%;height:2.4%}
+    .call-main{left:3.7%;top:25.1%;width:21.8%;height:3.7%}
+    .schedule{left:27.5%;top:25.1%;width:19.3%;height:3.7%}
+    .submit{left:15.2%;top:87.2%;width:26.9%;height:3.1%}
+    .footer-book{left:51.9%;top:94.1%;width:9.3%;height:2.4%}
+    .email-link{left:62.3%;top:78.8%;width:20.0%;height:2.2%}
+
+    /* Footer navigation */
+    .foot-home{left:26.6%;top:94.0%;width:4.2%;height:2.5%}
+    .foot-services{left:31.7%;top:94.0%;width:5.0%;height:2.5%}
+    .foot-vehicle{left:37.7%;top:94.0%;width:7.0%;height:2.5%}
+    .foot-about{left:45.2%;top:94.0%;width:4.7%;height:2.5%}
+    .foot-contact{left:59.8%;top:94.0%;width:5.7%;height:2.5%}
+
+    /*
+      Clean text overlays.
+      The approved design is one image, so these cover the two old text areas
+      without altering the rest of the artwork.
+    */
+    .call-cleanup{
+      position:absolute;z-index:7;pointer-events:none;
+      left:7.7%;top:25.18%;width:17.0%;height:3.35%;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background:linear-gradient(90deg,#d9a83f 0%,#f1d47a 52%,#d9a83f 100%);
+      color:#16110a;border-radius:0 8px 8px 0;
+      font-family:Georgia,"Times New Roman",serif;
+      letter-spacing:.08em;text-align:center;
+    }
+    .call-cleanup .label{font-size:clamp(9px,1.35vw,15px);line-height:1.05}
+    .call-cleanup .phone{font-size:clamp(8px,1.2vw,14px);line-height:1.2;margin-top:.18em;letter-spacing:.16em}
+
+    .email-cleanup{
+      position:absolute;z-index:7;pointer-events:none;
+      left:62.5%;top:79.0%;width:18.5%;height:1.7%;
+      display:flex;align-items:center;
+      background:rgba(8,12,17,.92);
+      color:#fff;border-radius:4px;
+      padding-left:.35%;
+      font-size:clamp(8px,1.12vw,14px);
+      white-space:nowrap;
+    }
+
+    .modal{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:18px}
+    .modal.open{display:flex}
+    .card{width:min(560px,100%);max-height:92vh;overflow:auto;background:#0b0b0b;border:1px solid #b9913f;border-radius:18px;padding:22px;box-shadow:0 20px 60px #000}
+    .card h2{margin:0 0 6px;color:#d4af5b;font-family:Georgia,serif;letter-spacing:.05em}
+    .card p{margin:0 0 18px;color:#ddd}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,select,textarea{width:100%;background:#151515;color:#fff;border:1px solid #777;border-radius:7px;padding:12px;font-size:16px}
+    textarea{min-height:100px;resize:vertical}
+    .wide{grid-column:1/-1}
+    .actions{display:flex;gap:10px;margin-top:14px}
+    button{border:0;border-radius:8px;padding:13px 16px;font-weight:700;cursor:pointer}
+    .gold{background:linear-gradient(90deg,#c89b3c,#f0cb75);color:#111;flex:1}
+    .dark{background:#222;color:#fff;border:1px solid #777}
+    .note{font-size:13px;color:#aaa;margin-top:12px}
+    @media(max-width:620px){
+      .grid{grid-template-columns:1fr}
+      .wide{grid-column:auto}
+      .card{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <main class="site" id="site" aria-label="ExecDrive luxury chauffeur service">
+    <img class="art" src="execdrive-approved.png" alt="ExecDrive luxury chauffeur service website featuring the EC car silhouette logo, black Infiniti SUV, airport and airplane imagery, Denver skyline and mountains, services, ride request form and contact information.">
+
+    <!-- Top menu: smooth-scrolls to sections of this same page. -->
+    <button class="hotspot nav-home" type="button" aria-label="Home" onclick="goTo(0)"></button>
+    <button class="hotspot nav-services" type="button" aria-label="Services" onclick="goTo(.315)"></button>
+    <button class="hotspot nav-vehicle" type="button" aria-label="Our Vehicle" onclick="goTo(.395)"></button>
+    <button class="hotspot nav-about" type="button" aria-label="About ExecDrive" onclick="goTo(.405)"></button>
+    <button class="hotspot nav-book" type="button" aria-label="Book a Ride" onclick="goTo(.675)"></button>
+    <button class="hotspot nav-contact" type="button" aria-label="Contact ExecDrive" onclick="goTo(.690)"></button>
+
+    <!-- Working action buttons. -->
+    <a class="hotspot call-top" href="tel:+17204252202" aria-label="Call ExecDrive"></a>
+    <a class="hotspot call-main" href="tel:+17204252202" aria-label="Call ExecDrive at 720-425-2202"></a>
+    <button class="hotspot schedule" type="button" aria-label="Schedule a ride" onclick="openRide()"></button>
+    <button class="hotspot submit" type="button" aria-label="Submit ride request" onclick="openRide()"></button>
+    <button class="hotspot footer-book" type="button" aria-label="Book a ride" onclick="goTo(.675)"></button>
+    <a class="hotspot email-link" href="mailto:info@execdrive.biz" aria-label="Email ExecDrive at info@execdrive.biz"></a>
+
+    <!-- Footer menu -->
+    <button class="hotspot foot-home" type="button" aria-label="Home" onclick="goTo(0)"></button>
+    <button class="hotspot foot-services" type="button" aria-label="Services" onclick="goTo(.315)"></button>
+    <button class="hotspot foot-vehicle" type="button" aria-label="Our Vehicle" onclick="goTo(.395)"></button>
+    <button class="hotspot foot-about" type="button" aria-label="About ExecDrive" onclick="goTo(.405)"></button>
+    <button class="hotspot foot-contact" type="button" aria-label="Contact ExecDrive" onclick="goTo(.690)"></button>
+
+    <!-- Corrected visible text -->
+    <div class="call-cleanup" aria-hidden="true">
+      <span class="label">CALL / TEXT</span>
+      <span class="phone">720-425-2202</span>
+    </div>
+    <div class="email-cleanup" aria-hidden="true">info@execdrive.biz</div>
+  </main>
+
+  <div class="modal" id="rideModal" role="dialog" aria-modal="true" aria-labelledby="rideTitle">
+    <form class="card" id="rideForm">
+      <h2 id="rideTitle">Request a Ride</h2>
+      <p>Send your trip details directly to ExecDrive.</p>
+      <div class="grid">
+        <input id="name" required placeholder="Full Name" autocomplete="name">
+        <input id="phone" required placeholder="Phone Number" inputmode="tel" autocomplete="tel">
+        <input id="pickup" required placeholder="Pickup Location">
+        <input id="dropoff" required placeholder="Drop-off Location">
+        <input id="date" required type="date">
+        <input id="time" required type="time">
+        <select id="passengers" required>
+          <option value="">Number of Passengers</option>
+          <option>1</option><option>2</option><option>3</option><option>4</option>
+          <option>5</option><option>6</option><option>7</option>
+        </select>
+        <textarea class="wide" id="details" placeholder="Additional Details (Optional)"></textarea>
+      </div>
+      <div class="actions">
+        <button type="button" class="dark" onclick="closeRide()">Cancel</button>
+        <button type="submit" class="gold">Send Request</button>
+      </div>
+      <div class="note">This opens your text-message app with the ride request addressed to 720-425-2202.</div>
+    </form>
+  </div>
+
+  <script>
+    const modal=document.getElementById('rideModal');
+    const site=document.getElementById('site');
+
+    function goTo(ratio){
+      const y=site.offsetTop+(site.offsetHeight*ratio);
+      window.scrollTo({top:Math.max(0,y-8),behavior:'smooth'});
+    }
+
+    function openRide(){
+      modal.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    function closeRide(){
+      modal.classList.remove('open');
+      document.body.style.overflow='';
+    }
+    modal.addEventListener('click',e=>{if(e.target===modal)closeRide()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeRide()});
+
+    document.getElementById('rideForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      const g=id=>document.getElementById(id).value.trim();
+      const msg=[
+        'ExecDrive Ride Request',
+        'Name: '+g('name'),
+        'Phone: '+g('phone'),
+        'Pickup: '+g('pickup'),
+        'Drop-off: '+g('dropoff'),
+        'Date: '+g('date'),
+        'Time: '+g('time'),
+        'Passengers: '+g('passengers'),
+        'Details: '+(g('details')||'None')
+      ].join('\n');
+      location.href='sms:+17204252202?&body='+encodeURIComponent(msg);
+    });
+
+    /* Remove caches from the earlier test/PWA build so GitHub updates appear quickly. */
+    if('serviceWorker' in navigator){
+      navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister()));
+    }
+    if('caches' in window){
+      caches.keys().then(keys=>keys.forEach(k=>caches.delete(k)));
+    }
+  </script>
+</body>
+</html>
